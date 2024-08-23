@@ -1,2 +1,2 @@
 # code-docker-bismark
-Bismark Bisulfite Mapper
+Tool specialzed for analysis of Bisulfite-Seq (BS-Seq) data
