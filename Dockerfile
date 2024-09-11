@@ -21,4 +21,4 @@ RUN apt install -y bowtie2
 RUN wget https://github.com/FelixKrueger/Bismark/archive/refs/tags/v0.24.2.tar.gz -O Bismark-0.24.2.tar.gz \
     && tar xzf Bismark-0.24.2.tar.gz \
     && echo 'export PATH="'$(readlink -f Bismark-0.24.2)':$PATH"' >> ~/.bashrc \
-    && /bin/bash -c "source ~/.bashrc"
+    && /bin/bash -c "source ~/.bashrc" \
