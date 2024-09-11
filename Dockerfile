@@ -18,7 +18,11 @@ RUN apt install -y python3 python3-pip build-essential zip samtools \
 RUN apt install -y bowtie2
 
 # Bismark
-RUN wget https://github.com/FelixKrueger/Bismark/archive/refs/tags/v0.24.2.tar.gz -O Bismark-0.24.2.tar.gz \
-    && tar xzf Bismark-0.24.2.tar.gz \
-    && echo 'export PATH="'$(readlink -f Bismark-0.24.2)':$PATH"' >> ~/.bashrc \
-    && /bin/bash -c "source ~/.bashrc" \
+RUN mkdir -p /root/Bismark \
+    && wget $(curl -s https://api.github.com/repos/FelixKrueger/Bismark/releases/latest | grep "tarball_url" | cut -f4 -d '"') -O Bismark-latest.tar.gz
+
+RUN tar -xzf Bismark-latest.tar.gz -C /root/Bismark --strip-components 1 \
+    && rm -f /root/Bismark-latest.tar.gz \
+    && echo 'export PATH="'$(readlink -f Bismark)':$PATH"' >> ~/.bashrc \
+    && /bin/bash -c "source ~/.bashrc" 
+
