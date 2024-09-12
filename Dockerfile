@@ -22,6 +22,10 @@ RUN rm /root/bismark_latest.tar.gz
 # Add Bismark to the PATH
 ENV PATH="/root/bismark:$PATH"
 
+# Download the set.thread.num.sh script
+RUN curl -o /root/set.thread.num.sh https://raw.githubusercontent.com/cuhk-haosun/code-docker-script-lib/main/set.thread.num.sh && \
+    chmod +x /root/set.thread.num.sh
+
 # Copy the entrypoint script into the container
 COPY entrypoint.sh /entrypoint.sh
 
