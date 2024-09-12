@@ -16,7 +16,7 @@ for file1 in "$INPUT_DIR"/*.R1.fastq.gz; do
     echo "Processing paired files: $file1 and $file2"
     
     # Run the bismark command with paired files
-    /root/bismark -1 "$file1" -2 "$file2" -o "$OUTPUT_DIR"
+    bismark $REF_DIR -1 "$file1" -2 "$file2" -o "$OUTPUT_DIR"
     
     echo "Finished processing: $file1 and $file2"
   else
