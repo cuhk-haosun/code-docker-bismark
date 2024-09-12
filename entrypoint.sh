@@ -5,6 +5,14 @@ INPUT_DIR="/mnt/in"
 OUTPUT_DIR="/mnt/out"
 REF_DIR="/mnt/ref"
 
+
+
+# Source the script to set THREAD_NUM
+echo "Running set.thread.num.sh to set THREAD_NUM..."
+source /root/set.thread.num.sh
+
+
+
 # Find all .R1.fastq.gz files in the input directory
 for file1 in "$INPUT_DIR"/*.R1.fastq.gz; do
 
