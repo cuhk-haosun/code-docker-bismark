@@ -20,7 +20,7 @@ for file1 in "$INPUT_DIR"/*.R1.fastq.gz; do
     echo -e "\e[0;34mInfo: Processing paired files: $file1 and $file2\e[0m"
     
     # Run the bismark command with paired files
-    bismark --rrbs -p $THREAD_NUM $REF_DIR -1 "$file1" -2 "$file2" -o "$OUTPUT_DIR"
+    bismark -p $THREAD_NUM $REF_DIR -1 "$file1" -2 "$file2" -o "$OUTPUT_DIR"
     
     echo -e "\e[0;34mInfo: Finished processing: $file1 and $file2\e[0m"
   else
