@@ -10,7 +10,7 @@ echo -e "\e[0;34mInfo: Running set.thread.num.sh to set THREAD_NUM...\e[0m"
 source /root/set.thread.num.sh
 
 # manual override
-THREAD_NUM = 16
+THREAD_NUM=16
 
 # Find all .R1.fastq.gz files in the input directory
 for file1 in "$INPUT_DIR"/*.R1.fastq.gz; do
