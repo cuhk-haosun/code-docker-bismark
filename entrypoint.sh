@@ -12,6 +12,10 @@ source /root/set.thread.num.sh
 # manual override
 THREAD_NUM=16
 
+echo -e "\e[0;34mInfo: List the INPUT_DIR ...\e[0m"
+ls $INPUT_DIR
+
+
 # Find all .R1.fastq.gz files in the input directory
 for file1 in "$INPUT_DIR"/*.R1.fastq.gz; do
 
